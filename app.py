@@ -1,6 +1,5 @@
 from apistar import App, Include, Route, schema
 from apistar.docs import docs_routes
-from apistar.http import Response
 from apistar.statics import static_routes
 
 
@@ -14,9 +13,6 @@ class ToDoTitle(schema.String):
 
 
 def list_todo_items() -> schema.List[ToDoTitle]:
-    """
-    List all available todos
-    """
     return [ToDoTitle(item[1]) for item in _items]
 
 
